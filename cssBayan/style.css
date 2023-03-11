@@ -1,0 +1,34 @@
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-content-title{
+    background-color: darkgrey;
+    cursor: pointer;
+}
+
+.accordion-content-title + input[type="radio"]{
+    display: none; 
+}
+
+.accordion-content{
+    overflow: hidden;
+    max-height: 0;
+}
+
+input[type="radio"]:hover + .accordion-content{
+    max-height: 500px;
+    background-color: coral;
+}
+
+.accordion-content:hover{
+    max-height: 500px;
+    background-color: coral;
+}
+
+.accordion-content-title + input[type="radio"]:checked + .accordion-content{
+    max-height: 500px;
+}
+
