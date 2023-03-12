@@ -16,10 +16,11 @@ body{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 1.5em;
 }
 
 h1{
+    font-size: 2em;
     text-align: center;
 }
 
@@ -29,15 +30,32 @@ h1{
     align-items: center;
     margin: 0 auto;
     width: 50%;
+
+}
+
+.accordion:hover > .accordion-content-title{
+    color: gray;
 }
 
 .accordion-content-title{
     width: 100%;
-    background-color: darkgrey;
+    margin: 0.5em 0;
     cursor: pointer;
+    background-image: url(./mems/accordion-btn.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    transition: 0.7s all linear;
 }
 
-.accordion-content-title + input[type="radio"]{
+.accordion-content-title:hover{
+    background-image: url(./mems/accordion-btn-up.svg);
+}
+
+.icon{
+    text-align: right;
+}
+
+input[type="radio"]{
     display: none; 
 }
 
@@ -46,28 +64,55 @@ h1{
     max-height: 0;
     opacity: 0;
     cursor: pointer;
+    width: 100%;
     transition: 0.7s all linear;
 }
 
-input[type="radio"]:hover + .accordion-content{
+input[type="radio"]:hover + .accordion-content-title + .accordion-content{
     max-height: 50em;
-    background-color: coral;
     opacity: 1;
 }
 
 .accordion-content:hover{
     max-height: 50em;
-    background-color: coral;
     opacity: 1;
     transition: 0.7s all linear;
 }
 
-.accordion-content-title + input[type="radio"]:checked + .accordion-content{
+input[type="radio"]:checked + .accordion-content-title + .accordion-content{
     max-height: 50em;
     opacity: 1;
 }
 
-input[type="radio"]:checked + .accordion-content:hover{
+input[type="radio"]:checked + .accordion-content-title {
+    background-image: url(./mems/accordion-btn-up.svg);
+}
+
+.accordion-content-title:hover > .accordion-content{
     max-height: 50em;
     opacity: 1;
+}
+
+@media screen and (max-width: 820px){
+    body{
+        font-size: 1.2em;
+    }
+
+    h1{
+        font-size: 1.7em;
+    }
+}
+
+@media screen and (max-width: 320px){
+    body{
+        font-size: 1em;
+    }
+
+    h1{
+        font-size: 1.4em;
+    }
+
+    .accordion{
+        width: 90%;
+    }
 }
