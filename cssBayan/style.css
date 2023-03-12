@@ -33,9 +33,7 @@ h1{
 
 }
 
-.accordion:hover > .accordion-content-title{
-    color: gray;
-}
+
 
 .accordion-content-title{
     width: 100%;
@@ -45,10 +43,6 @@ h1{
     background-repeat: no-repeat;
     background-position: right center;
     transition: 0.7s all linear;
-}
-
-.accordion-content-title:hover{
-    background-image: url(./mems/accordion-btn-up.svg);
 }
 
 .icon{
@@ -68,16 +62,6 @@ input[type="radio"]{
     transition: 0.7s all linear;
 }
 
-input[type="radio"]:hover + .accordion-content-title + .accordion-content{
-    max-height: 50em;
-    opacity: 1;
-}
-
-.accordion-content:hover{
-    max-height: 50em;
-    opacity: 1;
-    transition: 0.7s all linear;
-}
 
 input[type="radio"]:checked + .accordion-content-title + .accordion-content{
     max-height: 50em;
@@ -88,10 +72,6 @@ input[type="radio"]:checked + .accordion-content-title {
     background-image: url(./mems/accordion-btn-up.svg);
 }
 
-.accordion-content-title:hover > .accordion-content{
-    max-height: 50em;
-    opacity: 1;
-}
 
 @media screen and (max-width: 820px){
     body{
@@ -115,4 +95,31 @@ input[type="radio"]:checked + .accordion-content-title {
     .accordion{
         width: 90%;
     }
+}
+
+@media (hover: hover){
+    .accordion:hover > .accordion-content-title{
+        color: gray;
+    }
+
+    .accordion-content-title:hover{
+        background-image: url(./mems/accordion-btn-up.svg);
+    }
+
+    
+input[type="radio"]:hover + .accordion-content-title + .accordion-content{
+    max-height: 50em;
+    opacity: 1;
+}
+
+.accordion-content:hover{
+    max-height: 50em;
+    opacity: 1;
+    transition: 0.7s all linear;
+}
+
+.accordion-content-title:hover > .accordion-content{
+    max-height: 50em;
+    opacity: 1;
+}
 }
